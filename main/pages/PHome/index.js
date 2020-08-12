@@ -1,14 +1,22 @@
 import React from 'react'
-import { observer } from 'startupjs'
 import { ScrollView } from 'react-native'
-import { TestComponent } from 'components'
 import './index.styl'
-import { Content } from '@startupjs/ui'
+import { Content, Row, H3 } from '@startupjs/ui'
+import SuggestionForm from 'main/components/SuggestionForm'
+import SuggestionView from 'main/components/SuggestionView'
 
-export default observer(function PHome () {
+import suggestionArray from './suggestionData'
+
+const PHome = () => {
   return pug`
     ScrollView.root
       Content
-        TestComponent
+        Row.intro(vAlign="center")
+          H3.white BARE IT
+        SuggestionForm
+        each suggestion, index in suggestionArray
+          SuggestionView(key=index index=index ...suggestion)
   `
-})
+}
+
+export default PHome
