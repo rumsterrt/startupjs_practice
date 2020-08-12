@@ -1,15 +1,30 @@
 import React from 'react'
 import './index.styl'
-import { Div, Row, H6, H3, Span, Button } from '@startupjs/ui'
+import { Div, Row, H6, H3, Span, Button, Icon } from '@startupjs/ui'
 import { Image } from 'react-native'
 import { BASE_URL } from '@env'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faBookOpen } from '@fortawesome/free-solid-svg-icons'
+import { faMap, faCommentAlt } from '@fortawesome/free-regular-svg-icons'
 import data from './data'
 
 const base = BASE_URL
 
+const navItems = [
+  { icon: faBookOpen, text: 'Books of love' },
+  { icon: faMap, text: 'Culture map' },
+  { icon: faCommentAlt, text: 'Send feedback' }
+]
+
 const EventSidebar = () => {
   return pug`
+    Div.header
+      Div.headerImage.red
+      Span.headerText.red #MLSH
+    Row.navBar
+      each navItem, index in navItems
+        Div.navElem(key=index styleName=[{first: index === 0}] variant='shadow' onClick=() => {})
+          Icon(icon=navItem.icon color='#D80514' size='xl' )
+          Span.navText.red #{navItem.text}
     Div.root
       Div.subContainer.first
         H6.red TEAMMATE
