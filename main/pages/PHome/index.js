@@ -13,7 +13,7 @@ const PHome = () => {
       Div.wrapper
         Row.intro(vAlign="center")
           H3.white BARE IT
-        SuggestionForm
+        SuggestionForm.form
         each suggestion, index in suggestionArray
           SuggestionView(key=index index=index ...suggestion)
   `

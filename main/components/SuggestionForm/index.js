@@ -3,13 +3,13 @@ import { TextInput, Div, Button, H4, Span, Br } from '@startupjs/ui'
 import { observer, useValue } from 'startupjs'
 import './index.styl'
 
-const SuggestionForm = () => {
+const SuggestionForm = ({ style }) => {
   const [form, $form] = useValue({})
 
   const handleChange = (field) => (value) => $form.set({ ...form, [field]: value })
 
   return pug`
-    Div.root
+    Div.root(style=style)
       H4.red ADD A SUGGESTION
       Span.subtitle.red WE LOVE TO HEAR NEW IDEAS ON HOW TO BE EVEN MORE AWESOME
       Br

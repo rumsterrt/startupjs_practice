@@ -10,18 +10,21 @@ export default [
         author: 'Rebecca La Malfa',
         message: 'Corey I will bake you what ever you want!',
         date: '01.05.2017 00:01:30',
-        tags: ['Excelproblems']
+        tags: ['Excelproblems'],
+        avatar: 'https://gravatar.com/avatar/009d4afd170cf49c52847eca78a436da?s=400&d=robohash&r=x'
       },
       {
         author: 'Clio Knowles',
         message:
           "Hi Rebecca, Great suggestion! We can definitely make this happen. We'll uodate you with futher details... Thanks!",
-        date: '01.05.2017 00:00:45'
+        date: '01.05.2017 00:00:45',
+        avatar: 'https://gravatar.com/avatar/de05de2861369fe94baa4c4910302803?s=400&d=robohash&r=x'
       },
       {
         author: 'Corey Hartmann',
         message: "I'm willing to trade tutoring sessions for baked goods",
-        date: '01.05.2017 00:00:30'
+        date: '01.05.2017 00:00:30',
+        avatar: 'https://gravatar.com/avatar/f32a9045193b913a5aafb429d7a32c86?s=400&d=robohash&r=x'
       }
     ]
   },

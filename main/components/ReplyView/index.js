@@ -1,13 +1,13 @@
 import React from 'react'
-import { Button, Row, Icon, Div, Span } from '@startupjs/ui'
+import { Button, Row, Div, Span, Avatar } from '@startupjs/ui'
 import { observer } from 'startupjs'
-import { faSmile, faTimesCircle } from '@fortawesome/free-regular-svg-icons'
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
 import './index.styl'
 
 const ReplyView = ({ author, message, date, avatar, tags = [] }) => {
   return pug`
     Row.root
-      Icon(icon=faSmile size='xl')
+      Avatar(src=avatar size='s')
       Div.body
         Row.topBlock
           Span.author.red #{author}
