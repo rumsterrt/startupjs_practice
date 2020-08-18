@@ -7,7 +7,7 @@ import EventSidebar from 'main/components/EventSidebar'
 import { Dimensions } from 'react-native'
 import _ from 'lodash'
 
-const Sidebar = ({ children }) => {
+const Sidebar = ({ children, style }) => {
   const [render, $render] = useLocal('_session.sidebar')
   const [lastRender, setLastRender] = useState({})
 
@@ -30,14 +30,16 @@ const Sidebar = ({ children }) => {
     }
     return null
   }
-  console.log('asda', Dimensions.get('window').width)
+
   return pug`
-    SmartSidebar(
+    SmartSidebar.sidebar(
+      style=style
       backgroundColor='#eeeeee'
       $open=$render
       renderContent=content
       position=lastRender.position || 'left'
-      width=Dimensions.get('window').width * (lastRender.koef || 0.8)
+      width=Math.min(400, Dimensions.get('window').width * (lastRender.koef || 0.8))
+      fixedLayoutBreakpoint=10000
     )
       = children
   `

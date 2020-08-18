@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer, emit, useLocal } from 'startupjs'
 import './index.styl'
-import { Menu, Div, Row, Button } from '@startupjs/ui'
+import { Menu, Div, Row, Button, Span } from '@startupjs/ui'
 import { Image } from 'react-native'
 import { BASE_URL } from '@env'
 import { faFacebookF, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
@@ -32,6 +32,10 @@ const menuItems = [
   {
     name: 'RESOURCES',
     url: '/'
+  },
+  {
+    name: 'V\u2764WELL',
+    url: '/'
   }
 ]
 
@@ -44,21 +48,22 @@ const socialNetworks = [
 
 const MenuItem = observer(({ url, children }) => {
   const [currentUrl] = useLocal('$render.url')
+  console.log('currentUrl', currentUrl)
   return pug`
-    Menu.menuItem(
+    Span.navItem(
       active=currentUrl === url
       onPress=() => emit('url', url)
     )= children
   `
 })
 
-const MainSidebar = () => {
+const MainSidebar = ({ style }) => {
   return pug`
-    Div.root
+    Div.root(style=style)
       Image.logo(source={uri:base + '/img/main-logo-white.png'} resizeMode="contain")
-      Menu.sidebar
+      Menu.nav
         each item, index in menuItems
-          MenuItem(key=item.name url=item.url  styleName=[{first: index === 0}]) #{item.name}
+          MenuItem(key=item.name url=item.url styleName=[{first: index === 0}]) #{item.name}
       Row.socialContainer(align='between')
         each item, index in socialNetworks
           Button.social(key=index icon=item.icon size='m' onPress=() => emit('url', item.url) shape='circle' iconColor='red' styleName=[{first: index === 0}])

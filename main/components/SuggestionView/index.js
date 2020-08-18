@@ -10,7 +10,8 @@ import './index.styl'
 const SuggestionView = ({ title, description, votes, author, date, replies, index }) => {
   return pug`
     Div.root
-      Span.id #{index}
+      Div.id 
+        Span.idText #{index}
       Div.body
         H6.title #{title}
         Span.subtitle.red #{author + ' '}

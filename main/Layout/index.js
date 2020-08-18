@@ -9,8 +9,9 @@ import './index.styl'
 export default observer(function ({ children }) {
   return pug`
     Layout.layout
-      Sidebar
-        Header
-        Div.body= children
+      Sidebar.sidebar
+        Div.wrapper
+          Header
+          Div.body= children
   `
 })

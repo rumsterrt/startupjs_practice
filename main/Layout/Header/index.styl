@@ -1,22 +1,39 @@
-$menuHeight = 8u
-
 .menu
   background-color transparent
-  height $menuHeight
+  height 8u
   z-index 1
   align-items center
-  padding 0 2u
+  +wide()
+    height 15u
 
 .logo
   margin-left 2u
   color $UI.colors.secondaryText
   font(xl)
 
-.left
+.main
+  display none
+  flex 1
+  +wide()
+    display flex
+
+
+.helloNiraj
   margin-left 2u
+  +wide()
+    flex-direction row-reverse
 
 .white
   color #fff
 
-.smile
+.helloNirajIcon
+  +wide()
+    margin-left 1u
+.helloNirajText
   margin-left 1u
+  +wide()
+    margin-left 0
+
+.noWide
+  +wide()
+    display none

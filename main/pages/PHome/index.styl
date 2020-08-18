@@ -2,11 +2,23 @@
   padding 2u 0
   flex 1
 
-.form
-  margin-top 4u
-.white
+.eventBar
+  display none
+  +wide()
+    display flex
+    flex 1
+
+.main
+  flex 1
+  +wide()
+    flex 2
+
+.title
+  letter-spacing 2u
   color #fff
+  font-size 5u
 
 .wrapper
-  padding 0 2u
-  width 100%
+  flex 1
+  flex-direction row
+  margin-top 4u
