@@ -5,14 +5,15 @@ import { Image } from 'react-native'
 import { BASE_URL } from '@env'
 import { faChevronDown, faBookOpen } from '@fortawesome/free-solid-svg-icons'
 import { faMap, faCommentAlt } from '@fortawesome/free-regular-svg-icons'
+import { emit } from 'startupjs'
 import data from './data'
 
 const base = BASE_URL
 
 const navItems = [
-  { icon: faBookOpen, text: 'Books of love' },
-  { icon: faMap, text: 'Culture map' },
-  { icon: faCommentAlt, text: 'Send feedback' }
+  { icon: faBookOpen, text: 'Books of love', url: '/#bookOfLove' },
+  { icon: faMap, text: 'Culture map', url: '/#cultureMap' },
+  { icon: faCommentAlt, text: 'Send feedback', url: '/#sendFeedback' }
 ]
 
 const EventSidebar = ({ style }) => {
@@ -23,7 +24,7 @@ const EventSidebar = ({ style }) => {
         Span.headerText.red #MLSH
       Row.navBar
         each navItem, index in navItems
-          Div.navElem(key=index styleName=[{first: index === 0}] variant='highlight' onClick=() => {})
+          Div.navElem(key=index styleName=[{first: index === 0}] variant='highlight' onClick=() => emit('url', navItem.url))
             Icon(icon=navItem.icon color='#D80514' size='xl' )
             Span.navText.red #{navItem.text}
       Div.events

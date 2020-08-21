@@ -11,48 +11,49 @@ const base = BASE_URL
 const menuItems = [
   {
     name: 'VALENTINES',
-    url: '/'
+    url: '/#valentines'
   },
   {
     name: 'V\u2764PEEPS',
-    url: '/'
+    url: '/#peeps'
   },
   {
     name: 'V\u2764PREPS',
-    url: '/'
+    url: '/#preps'
   },
   {
     name: 'CULTURE',
-    url: '/'
+    url: '/#culture'
   },
   {
     name: 'TRIBE',
-    url: '/'
+    url: '/#tribe'
   },
   {
     name: 'RESOURCES',
-    url: '/'
+    url: '/#resources'
   },
   {
     name: 'V\u2764WELL',
-    url: '/'
+    url: '/#well'
   }
 ]
 
 const socialNetworks = [
-  { icon: faFacebookF, url: '/' },
-  { icon: faInstagram, url: '/' },
-  { icon: faLinkedin, url: '/' },
-  { icon: faTwitter, url: '/' }
+  { icon: faFacebookF, url: '/#facebook' },
+  { icon: faInstagram, url: '/#instagram' },
+  { icon: faLinkedin, url: '/#linkedin' },
+  { icon: faTwitter, url: '/#twitter' }
 ]
 
 const MenuItem = observer(({ url, children }) => {
   const [currentUrl] = useLocal('$render.url')
-  console.log('currentUrl', currentUrl)
+
   return pug`
-    Span.navItem(
+    Button.navItem(
       active=currentUrl === url
       onPress=() => emit('url', url)
+      variant='text'
     )= children
   `
 })

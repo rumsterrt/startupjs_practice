@@ -11,7 +11,7 @@ const ReplyView = ({ author, message, date, avatar, tags = [] }) => {
       Div.body
         Row.topBlock
           Span.author.red #{author}
-          Button.removeButton(icon=faTimesCircle variant='text' iconColor='#D11B1E')
+          Button.removeButton(icon=faTimesCircle variant='text' iconColor='#D11B1E' onPress=() => {})
         Span.message #{message + ' '}
           Span.red #{tags.map(tag => '#'+ tag).join(' ')}
         Span.date #{date}

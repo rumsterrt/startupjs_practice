@@ -23,8 +23,8 @@ const SuggestionView = ({ title, description, votes, author, date, replies, inde
             Span.red #{' VOTE: '}
               Span #{votes}
           Row(align='between' vAlign='center')
-            Button(icon=faTimesCircle variant='text' iconColor='#D11B1E')
-            Button(icon=faHeart variant='text' iconColor='#D11B1E' color='#D11B1E') MANAGE
+            Button(icon=faTimesCircle variant='text' iconColor='#D11B1E' onPress=() => {})
+            Button(icon=faHeart variant='text' iconColor='#D11B1E' color='#D11B1E' onPress=() => {}) MANAGE
         each reply, index in replies
           ReplyView(...reply key=index)
         ReplyForm
