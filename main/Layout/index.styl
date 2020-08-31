@@ -1,22 +1,16 @@
-$menuHeight = 6u
-$logoColor = #FCB69D
+.layout
+  background-image url(/img/background.png)
+  background-size cover
+  background-position 0 0
+  background-repeat no-repeat
 
-.sidebar
-  padding-top 2u
-
-.menu
-  background-color rgba(black, 0.02)
-  height $menuHeight
-  z-index 1
-  align-items center
-  padding 0 2u
-  border-bottom-width 1px
-  border-bottom-color rgba(black, 0.05)
-
-.logo
-  margin-left 2u
-  color $UI.colors.secondaryText
-  font(xl)
+.wrapper
+  margin 0 auto
+  width calc(100% - 4u)
+  height 100%
+  +wide()
+    max-width calc(100% - 30u)
+    width 180u
 
 .body
   flex 1

@@ -22,6 +22,8 @@
     "start-production": "startupjs start-production"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@startupjs/ui": "^0.23.28",
     "axios": "^0.19.2",

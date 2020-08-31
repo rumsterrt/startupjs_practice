@@ -1,0 +1,51 @@
+.root
+    width 100%
+    height 100%
+    background-color red
+    padding 2u
+    +wide()
+        padding 0
+        background-color none
+        flex-direction row
+        align-items center
+
+.logo
+  justify-content center
+  width 100%
+  height 10u
+  +wide()
+    height 15u
+    width 25u
+
+.navItem
+    cursor pointer
+    margin-top 4u
+    color #fff
+    +wide()
+        margin-top 0
+        margin-left 2u
+    &.first
+        margin-top 0
+        +wide()
+            margin-left 
+    &.active
+        text-decoration underline
+
+.social
+    background #fff
+    border-color #fff
+    width 3u
+    height 3u
+    padding 2u
+    +wide()
+        display none
+
+.nav
+    margin-top 6u
+    +wide()
+        margin-top 0
+        flex-direction row
+        align-items center
+
+.socialContainer
+    margin-top 6u

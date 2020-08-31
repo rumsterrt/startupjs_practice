@@ -1,14 +1,27 @@
 import React from 'react'
-import { observer } from 'startupjs'
 import { ScrollView } from 'react-native'
-import { TestComponent } from 'components'
 import './index.styl'
-import { Content } from '@startupjs/ui'
+import { Div, Row, H3 } from '@startupjs/ui'
+import SuggestionForm from 'main/components/SuggestionForm'
+import SuggestionView from 'main/components/SuggestionView'
+import EventSidebar from 'main/components/EventSidebar'
+import SuggestionBar from 'main/components/SuggestionBar'
 
-export default observer(function PHome () {
+import suggestionArray from './suggestionData'
+
+const PHome = () => {
   return pug`
-    ScrollView.root
-      Content
-        TestComponent
+    Div.root
+      Row.intro(vAlign="center")
+        H3.title BARE IT!
+      Div.wrapper
+        Div.main
+          SuggestionForm.form
+          SuggestionBar
+          each suggestion, index in suggestionArray
+            SuggestionView(key=index index=index ...suggestion)
+        EventSidebar.eventBar
   `
-})
+}
+
+export default PHome
